@@ -1,0 +1,25 @@
+#+TITLE: Spacemacs layer for intellij-lsp-server
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="../css/readtheorg.css" />
+
+* Table of Contents                                        :TOC_4_org:noexport:
+- [[Description][Description]]
+- [[Install][Install]]
+
+* Description
+This layer adds support for editing Java and Kotlin using IntelliJ IDEA with [[https://www.github.com/Ruin0x11/lsp-intellij-server][lsp-intellij-server]] as a backend.
+
+* Install
+First, follow the install steps at [[https://www.github.com/Ruin0x11/lsp-intellij-server][lsp-intellij-server]] to install the required plugin in your copy of IDEA.
+Then, clone the layer into your =~/.emacs.d/private= directory:
+
+#+BEGIN_SRC shell
+git clone git@github.com:Ruin0x11/lsp-intellij-spacemacs.git ~/.emacs.d/private/lsp-intellij
+#+END_SRC
+
+Finally, enable it (along with some extra layers for more features) in your =~/.spacemacs=:
+
+#+begin_src emacs-lisp
+  (setq-default dotspacemacs-configuration-layers '(auto-completion syntax-checking lsp-intellij))
+#+end_src
+
+Please see the [[https://www.github.com/Ruin0x11/lsp-intellij][lsp-intellij]] repo for more information.
