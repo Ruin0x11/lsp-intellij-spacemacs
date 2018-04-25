@@ -6,10 +6,10 @@
 - [[Install][Install]]
 
 * Description
-This layer adds support for editing Java and Kotlin using IntelliJ IDEA with [[https://www.github.com/Ruin0x11/lsp-intellij-server][lsp-intellij-server]] as a backend.
+This layer adds support for editing Java and Kotlin using IntelliJ IDEA with [[https://www.github.com/Ruin0x11/intellij-lsp-server][intellij-lsp-server]] as a backend.
 
 * Install
-First, follow the install steps at [[https://www.github.com/Ruin0x11/lsp-intellij-server][lsp-intellij-server]] to install the required plugin in your copy of IDEA.
+First, follow the install steps at [[https://www.github.com/Ruin0x11/intellij-lsp-server][intellij-lsp-server]] to install the required plugin in your copy of IDEA.
 Then, clone the layer into your =~/.emacs.d/private= directory:
 
 #+BEGIN_SRC shell
