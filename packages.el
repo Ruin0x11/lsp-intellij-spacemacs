@@ -11,7 +11,7 @@
 
 ;;; Code:
 
-(if (version< spacemacs-version "0.200.6")
+(if (version< spacemacs-version "0.300")
     (setq spacemacs//intellij-lsp-version-dir-name "spacemacs-0.200")
   (setq spacemacs//intellij-lsp-version-dir-name "spacemacs-0.300"))
 
