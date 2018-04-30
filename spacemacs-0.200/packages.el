@@ -52,28 +52,19 @@
                           ("mr" . "refactor")
                           ("mI" . "IDEA")
                           ))
-          (spacemacs/declare-prefix-for-mode
-            'java-mode (car prefix) (cdr prefix)))
-        (spacemacs/set-leader-keys-for-major-mode 'java-mode
-          ;; run
-          "," 'lsp-intellij-run-at-point
-          ;; configuration
-          "cr" 'lsp-intellij-open-run-configurations
-          ;; goto
-          "gg" 'xref-find-definitions
-          "gi" 'lsp-intellij-find-implementations
-          "gr" 'xref-find-references
-          ;; help/doc
-          "hs" 'xref-find-apropos
-          ;; project
-          "pb" 'lsp-intellij-build-project
-          "pr" 'lsp-intellij-run-project
-          "ps" 'lsp-intellij-open-project-structure
-          ;; refactor
-          "rf" 'lsp-format-buffer
-          ;; IDEA
-          "It" 'lsp-intellij-toggle-frame-visibility)
+          (progn
+            (spacemacs/declare-prefix-for-mode
+              'java-mode (car prefix) (cdr prefix))
+            (spacemacs/declare-prefix-for-mode
+              'kotlin-mode (car prefix) (cdr prefix))))
+        (spacemacs//lsp-intellij-setup-leader-keys 'java-mode)
+        (spacemacs//lsp-intellij-setup-leader-keys 'kotlin-mode)
         (evil-define-key 'insert java-mode-map
+          (kbd ".") 'spacemacs/java-lsp-completing-dot
+          (kbd ":") 'spacemacs/java-lsp-completing-double-colon
+          (kbd "M-.") 'xref-find-definitions
+          (kbd "M-,") 'pop-tag-mark)
+        (evil-define-key 'insert kotlin-mode-map
           (kbd ".") 'spacemacs/java-lsp-completing-dot
           (kbd ":") 'spacemacs/java-lsp-completing-double-colon
           (kbd "M-.") 'xref-find-definitions

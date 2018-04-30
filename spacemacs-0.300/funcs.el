@@ -25,6 +25,26 @@
   (spacemacs//init-company-kotlin-mode)
   (company-mode))
 
+(defun spacemacs//lsp-intellij-setup-leader-keys (mode)
+  (spacemacs/set-leader-keys-for-major-mode mode
+    ;; run
+    "," 'lsp-intellij-run-at-point
+    ;; configuration
+    "cr" 'lsp-intellij-open-run-configurations
+    ;; goto
+    "gg" 'xref-find-definitions
+    "gi" 'lsp-intellij-find-implementations
+    "gr" 'xref-find-references
+    ;; help/doc
+    "hs" 'xref-find-apropos
+    ;; project
+    "pb" 'lsp-intellij-build-project
+    "pr" 'lsp-intellij-run-project
+    "ps" 'lsp-intellij-open-project-structure
+    ;; refactor
+    "rf" 'lsp-format-buffer
+    ;; IDEA
+    "It" 'lsp-intellij-toggle-frame-visibility))
 
 ;; The following is adapted from Spacemacs' Eclim completion functions:
 ;;  https://github.com/syl20bnr/spacemacs/blob/3731d0d/layers/%2Blang/java/funcs.el
