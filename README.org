@@ -16,10 +16,34 @@ Then, clone the layer into your =~/.emacs.d/private= directory:
 git clone git@github.com:Ruin0x11/lsp-intellij-spacemacs.git ~/.emacs.d/private/lsp-intellij
 #+END_SRC
 
-Finally, enable it (along with some extra layers for more features) in your =~/.spacemacs=:
+How you enable this layer depends on your Spacemacs version, which you can find with =M-: spacemacs-version=.
+
+** 0.200.*
+Add the following layers to your =dotspacemacs-configuration-layers= in =~/.spacemacs=:
+
+#+begin_src emacs-lisp
+  auto-completion syntax-checking lsp-intellij
+#+end_src
+
+With no other layers enabled, this will look like:
 
 #+begin_src emacs-lisp
   (setq-default dotspacemacs-configuration-layers '(auto-completion syntax-checking lsp-intellij))
 #+end_src
+
+** 0.300.*
+Add the following layers to your =dotspacemacs-configuration-layers= in =~/.spacemacs=:
+
+#+begin_src emacs-lisp
+  auto-completion syntax-checking lsp lsp-intellij
+#+end_src
+
+With no other layers enabled, this will look like:
+
+#+begin_src emacs-lisp
+  (setq-default dotspacemacs-configuration-layers '(auto-completion syntax-checking lsp lsp-intellij))
+#+end_src
+
+----------
 
 Please see the [[https://www.github.com/Ruin0x11/lsp-intellij][lsp-intellij]] repo for more information.

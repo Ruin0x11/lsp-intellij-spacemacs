@@ -1,4 +1,4 @@
-;;; config.el --- lsp-intellij layer packages file for Spacemacs.
+;;; funcs.el --- lsp-intellij layer packages file for Spacemacs.
 ;;
 ;; Copyright (c) 2018 Richard Jones
 ;;
@@ -19,7 +19,7 @@
       (expand-file-name spacemacs//intellij-lsp-version-dir-name
                         (file-name-directory (or load-file-name buffer-file-name))))
 
-;; Load the relevant `config.el` based on Spacemacs version
-(load (expand-file-name "config" spacemacs//intellij-lsp-version-dir-fullpath) t)
+;; Load the relevant `funcs.el` based on Spacemacs version
+(load (expand-file-name "funcs" spacemacs//intellij-lsp-version-dir-fullpath) t)
 
-;;; config.el ends here
+;;; funcs.el ends here
