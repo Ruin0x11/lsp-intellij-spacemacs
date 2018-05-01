@@ -20,7 +20,8 @@
     "cr" 'lsp-intellij-open-run-configurations
     ;; goto
     "gg" 'xref-find-definitions
-    "gi" 'lsp-intellij-find-implementations
+    "gt" 'lsp-goto-type-definition
+    "gi" 'lsp-goto-implementation
     "gr" 'xref-find-references
     ;; help/doc
     "hs" 'xref-find-apropos
