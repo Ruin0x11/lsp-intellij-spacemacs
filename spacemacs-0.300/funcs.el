@@ -47,27 +47,4 @@
     ;; IDEA
     "It" 'lsp-intellij-toggle-frame-visibility))
 
-;; The following is adapted from Spacemacs' Eclim completion functions:
-;;  https://github.com/syl20bnr/spacemacs/blob/3731d0d/layers/%2Blang/java/funcs.el
-(defun spacemacs//java-lsp-delete-horizontal-space ()
-  (when (s-matches? (rx (+ (not space)))
-                    (buffer-substring (line-beginning-position) (point)))
-    (delete-horizontal-space t)))
-
-(defun spacemacs/java-lsp-completing-dot ()
-  "Insert a period and show company completions."
-  (interactive "*")
-  (spacemacs//java-lsp-delete-horizontal-space)
-  (insert ".")
-  (company-lsp 'interactive))
-
-(defun spacemacs/java-lsp-completing-double-colon ()
-  "Insert double colon and show company completions."
-  (interactive "*")
-  (spacemacs//java-lsp-delete-horizontal-space)
-  (insert ":")
-  (let ((curr (point)))
-    (when (s-matches? (buffer-substring (- curr 2) (- curr 1)) ":")
-      (company-lsp 'interactive))))
-
 ;;; funcs.el ends here
